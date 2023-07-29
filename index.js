@@ -39,11 +39,11 @@ app.post("/webhook", (req, res)=>{
 
     if(body_param.object){
         console.log("INSIDE BODY PARAM");
-        if(body_param.entry && body_param.entry[0].changes && body_param.entry[0].changes.value.messages && body_param.entry[0].changes[0].value.messages[0]){
+        if(body_param.entry && body_param.entry[0].changes && body_param.entry[0].changes[0].value.messages && body_param.entry[0].changes[0].value.messages[0]){
 
-            console.log("INSIDE BODY PARAM");
-            console.log("INSIDE BODY PARAM");
-            console.log("INSIDE BODY PARAM");
+            console.log("teste 1");
+            console.log("teste 2");
+            console.log("teste 3");
 
             let phon_no_id = body_param.entry[0].changes[0].value.metadata.phone_number_id;
             let from = body_param.entry[0].changes[0].value.messages[0].from;
