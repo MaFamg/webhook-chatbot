@@ -51,7 +51,9 @@ app.post("/webhook", (req, res)=>{
             console.log(from);
             console.log(msg_body);
 
-            axios({
+
+            try{
+                axios({
                 method:"POST",
                 url:"https://graph.facebook.com/v17.0/"+phon_no_id+"/messages?access_token="+token,
                 data:{
@@ -66,6 +68,11 @@ app.post("/webhook", (req, res)=>{
                     "Content-Type":"application/json"
                 }
             });
+            console.log("Message sent successfully:", response.data);
+                } 
+                catch (error) {
+                    console.error("Error occurred while sending the message:", error.message);
+                }
 
             console.log("teste 4");
             res.sendStatus(200);
